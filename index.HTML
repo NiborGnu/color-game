@@ -4,11 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quess the color</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- Css link -->
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <!-- Title -->
+    <title>Quess the Color</title>
 </head>
 
 <body>
+    <h1>Guess the Color in<br><span id="h1-color">RGB:</span></h1>
+    <div id="menu">
+        <button class="reset">New Color</button>
+        <button class="difficulty easy">Easy</button>
+        <button class="difficulty normal">Normal</button>
+        <button class="difficulty hard">Hard</button>
+    </div>
+    <div class="game-colors">
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+    </div>
 
+    <!-- JS Link -->
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

@@ -4,31 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <!-- Css link -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/CSS/style.css">
     <!-- Title -->
-    <title>Quess the Color</title>
+    <title>Guess the Color</title>
 </head>
 
 <body>
-    <h1>Guess the Color in<br><span id="h1-color">RGB:</span></h1>
-    <div id="menu">
-        <button class="reset">New Color</button>
-        <button class="difficulty easy">Easy</button>
-        <button class="difficulty normal">Normal</button>
-        <button class="difficulty hard">Hard</button>
+    <div class="heading">
+        <h1>Guess the Color in<br><span id="h1-color">RGB:</span></h1>
+    </div>
+    <div class="menu">
+        <button class="btn" id="reset">New Color</button>
+        <button class="btn" id="difficulty easy">Easy</button>
+        <button class="btn" id="difficulty normal">Normal</button>
+        <button class="btn" id="difficulty hard">Hard</button>
     </div>
     <div class="game-colors">
-        <div class="color-box"></div>
-        <div class="color-box"></div>
-        <div class="color-box"></div>
-        <div class="color-box"></div>
-        <div class="color-box"></div>
-        <div class="color-box"></div>
+        <div id="color-box"></div>
+        <div id="color-box"></div>
+        <div id="color-box"></div>
+        <div id="color-box"></div>
+        <div id="color-box"></div>
+        <div id="color-box"></div>
+        <div id="color-box"></div>
+        <div id="color-box"></div>
+        <div id="color-box"></div>
     </div>
 
     <!-- JS Link -->

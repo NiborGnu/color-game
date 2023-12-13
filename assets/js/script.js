@@ -10,5 +10,5 @@ let hard = document.getElementById('hard');
 let difficulty = document.getElementById('difficulty');
 
 // Game-color
-let gameColors = document.getElementById('game-colors');
+let gameColors = document.getElementsByClassName('game-colors');
 let colorBox = document.getElementById('color-box');

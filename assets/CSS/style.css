@@ -7,7 +7,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #fff;
     text-align: center;
-    margin: 0;
+    margin: 50px auto 0;
     display: flex;
     flex-direction: column;
 }
@@ -15,7 +15,8 @@ body {
 /* Heading */
 .heading {
     background-color: #500;
-    width: 100%;
+    width: 510px;
+    border-radius: 10px 10px 0 0;
     height: 150px;
     margin: 0 auto;
 }
@@ -27,7 +28,7 @@ h1 {
 /* Menu */
 .menu {
     margin: 0 auto;
-    width: 100%;
+    width: 510px;
     height: 25px;
     word-spacing: 10px;
     background-color: #400;
@@ -35,11 +36,13 @@ h1 {
 
 /* Buttons */
 .btn {
+    padding: 0 15px 0 15px;
     outline: none;
     background-color: #400;
     border: none;
     color: #fff;
     height: 100%;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -47,12 +50,14 @@ h1 {
 }
 
 .game-colors {
+    background-color: #500;
     margin: 0 auto;
     padding-top: 15px;
     max-width: 510px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    border-radius: 0 0 10px 10px;
 }
 
 #color-box {

@@ -12,8 +12,16 @@ body {
     flex-direction: column;
 }
 
-/* Heading */
-.heading {
+#start-game {
+    margin: auto;
+    width: 180px;
+    height: 90px;
+    background-color: #500;
+    color: #fff;
+}
+
+/* Header */
+header {
     background-color: #500;
     width: 510px;
     border-radius: 10px 10px 0 0;

@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('header').style.display = 'none';
     document.querySelector('main').style.display = 'none';
 
-    //  let h1Color = document.getElementById('h1-color');
-    //  let easy = document.getElementsByClassName('easy');
-    //  let normal = document.getElementsByClassName('normal');
-    //  let hard = document.getElementsByClassName('hard');
-    //  let difficulty = document.getElementsByClassName('difficulty');
-    //  let right = document.getElementById('right');
+    let h1Color = document.getElementById('h1-color');
+    let easy = document.getElementsByClassName('easy');
+    let normal = document.getElementsByClassName('normal');
+    let hard = document.getElementsByClassName('hard');
+    let difficulty = document.getElementsByClassName('difficulty');
+    let right = document.getElementById('right');
     let startGameButton = document.getElementById('start-game');
     let header = document.querySelector('header');
     let resetButton = document.getElementById('reset');
@@ -46,6 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /**
+     * Generate a random RGB color 
+     */
+    function randomColor() {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+
+    /**
      *  Choose a random color from the colors array
      */
     function chooseColor() {
@@ -64,14 +74,14 @@ document.addEventListener('DOMContentLoaded', function () {
         return arr;
     }
 
-    /**
-     * Generate a random RGB color 
+    /** 
+     * Change colors when correct color is selected
      */
-    function randomColor() {
-        let r = Math.floor(Math.random() * 256);
-        let g = Math.floor(Math.random() * 256);
-        let b = Math.floor(Math.random() * 256);
-        return "rgb(" + r + ", " + g + ", " + b + ")";
+    function changeColors(color) {
+        Array.from(gameColors.children).forEach(function (colorBox) {
+            colorBox.style.backgroundColor = color;
+            header.style.backgroundColor = color;
+        });
     }
 
     /**
@@ -85,10 +95,10 @@ document.addEventListener('DOMContentLoaded', function () {
             colorBox.addEventListener("click", function () {
                 let clickedColor = this.style.backgroundColor;
                 if (clickedColor == pickedColor) {
-                    right.textContent = "Right Answer";
+                    this.textContent = "Right Color"
+                    rightCounterDisplay.textContent = "Right Answer";
                     changeColors(pickedColor);
                     rightCounter++;
-                    rightCounterDisplay.textContent = "Right Color";
                     reset();
                 } else {
                     this.style.backgroundColor = "#550000";
@@ -106,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function reset() {
         colors = generateRandomColors(numColorBoxes);
         pickedColor = chooseColor();
+        console.log(pickedColor);
         h1Color.textContent = pickedColor;
         header.style.backgroundColor = "#500";
         resetButton.textContent = "New Colors";
@@ -115,20 +126,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Function to change colors when correct color is selected
-    function changeColors(color) {
-        Array.from(gameColors.children).forEach(function (colorBox) {
-            colorBox.style.backgroundColor = color;
-            header.style.backgroundColor = color;
-        });
-    }
-
     /**
      * Set up the difficulty mode buttons
      */
     function setupDifficulty() {
         let difficultyButtons = document.getElementsByClassName('difficulty');
-        difficultyButtons.forEach(function (button) {
+        Array.from(difficultyButtons).forEach(function (button) {
             button.addEventListener("click", function () {
                 difficultyButtons.forEach(function (btn) {
                     btn.classList.remove("selected");

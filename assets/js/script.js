@@ -1,18 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Hide Game
-    document.querySelector('header').style.display = 'none';
-    document.querySelector('main').style.display = 'none';
 
-    let h1Color = document.getElementById('h1-color');
-    let easy = document.getElementsByClassName('easy');
-    let normal = document.getElementsByClassName('normal');
-    let hard = document.getElementsByClassName('hard');
     let difficulty = document.getElementsByClassName('difficulty');
+    let colorBoxes = document.getElementsByClassName('color-box');
+    let h1Color = document.getElementById('h1-color');
     let right = document.getElementById('right');
     let startGameButton = document.getElementById('start-game');
     let header = document.querySelector('header');
     let resetButton = document.getElementById('reset');
-    let colorBoxes = document.getElementsByClassName('color-box');
     let gameColors = document.getElementsByClassName('game-colors');
     let rightCounterDisplay = document.getElementById('right-count');
     let wrongCounterDisplay = document.getElementById('wrong-count');
@@ -25,6 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let rightCounter = 0;
     let wrongCounter = 0;
 
+    // Hide Game
+    document.querySelector('header').style.display = 'none';
+    document.querySelector('main').style.display = 'none';
+
     /** 
      * Start Game Button 
      */
@@ -32,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
         startGameButton.style.display = 'none';
         document.querySelector('header').style.display = 'block';
         document.querySelector('main').style.display = 'block';
-        initializeGame();
     });
 
     /**
@@ -89,22 +86,17 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function setupColorBoxes() {
         for (let i = 0; i < numColorBoxes; i++) {
-            let colorBox = document.createElement('div');
-            colorBox.classList.add('color-box');
-            gameColors.appendChild(colorBox);
-            colorBox.addEventListener("click", function () {
+            colorBoxes.addEventListener("click", function () {
                 let clickedColor = this.style.backgroundColor;
-                if (clickedColor == pickedColor) {
+                if (clickedColor === pickedColor) {
                     this.textContent = "Right Color"
                     rightCounterDisplay.textContent = "Right Answer";
                     changeColors(pickedColor);
                     rightCounter++;
-                    reset();
                 } else {
                     this.style.backgroundColor = "#550000";
                     this.textContent = "Try again";
                     wrongCounter++;
-                    wrongCounterDisplay.textContent = "Try again";
                 }
             });
         }
@@ -142,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     numColorBoxes = 3;
                 } else if (this.id === "normal") {
                     numColorBoxes = 6;
-                } else if (this.id === "hard") {
+                } else {
                     numColorBoxes = 9;
                 }
                 reset();

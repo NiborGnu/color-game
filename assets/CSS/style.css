@@ -60,7 +60,7 @@ h1 {
     border-radius: 0 0 10px 10px;
 }
 
-#color-box {
+.color-box {
     border-radius: 10px;
     width: 150px;
     height: 150px;

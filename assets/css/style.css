@@ -75,7 +75,7 @@ div>button:hover {
     background-color: #500;
 }
 
-.game-colors {
+#game-colors {
     background-color: #500;
     margin: 0 auto;
     padding-top: 15px;

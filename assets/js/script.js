@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let h1 = document.querySelector('h1');
     let startGameButton = document.getElementById('start-game');
     let resetButton = document.getElementById('reset');
-
-    // let gameColors = document.getElementsByClassName('game-colors');
+    let message = document.getElementById('message')
+    let gameColors = document.getElementById('game-colors');
     // let rightCounterDisplay = document.getElementById('right-count');
     // let wrongCounterDisplay = document.getElementById('wrong-count');
 
@@ -90,16 +90,23 @@ document.addEventListener('DOMContentLoaded', function () {
             cubes[i].addEventListener("click", function () {
                 let clickedColor = this.style.backgroundColor;
                 if (clickedColor === pickedColor) {
-                    alert = "Right Color";
+                    message.textContent = "Right Color";
                     changeColors(pickedColor);
                     rightCounter++;
+                    updateScore();
                 } else {
                     this.style.backgroundColor = "#550000";
-                    this.textContent = "Try again";
+                    message.textContent = "Try Again";
                     wrongCounter++;
+                    updateScore();
                 }
             });
         }
+    }
+
+    function updateScore() {
+        document.getElementById('right-count').textContent = `Right: ${rightCounter}`;
+        document.getElementById('wrong-count').textContent = `Wrong: ${wrongCounter}`;
     }
 
     /**
@@ -118,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cubes[i].style.display = "none";
             }
         }
+        updateScore();
     }
 
     /**

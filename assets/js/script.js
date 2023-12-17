@@ -125,8 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 cubes[i].style.display = "none";
             }
         }
-        rightCounter = 0;
-        wrongCounter = 0;
         updateScore();
     }
 

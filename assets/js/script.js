@@ -24,11 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
      * Hide Game
      */
     function buttonToStartGame() {
-        header.style.Width = "700px"
+        welcomText.style.display = 'block';
+        header.style.Width = "700px";
         header.style.backgroundColor = '#222';
         hideGameHeader.style.display = 'none';
         main.style.display = 'none';
     }
+
     /** 
      * Start Game Button 
      */
@@ -98,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
             cubes[i].addEventListener("click", function () {
                 let clickedColor = this.style.backgroundColor;
                 if (clickedColor === answerCorrectColor) {
-                    message.textContent = "Right Color";
                     changeColorsGivenCorrectAnswer(answerCorrectColor);
                     rightCounter++;
                     resetToNextRound();
@@ -152,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         answerCorrectColor = chooseRandomColor();
         h1Color.textContent = answerCorrectColor;
         h1.style.backgroundColor = "#500";
+        message.textContent = "";
         for (let i = 0; i < cubes.length; i++) {
             if (colors[i]) {
                 cubes[i].style.display = "block";

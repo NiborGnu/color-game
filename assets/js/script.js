@@ -4,17 +4,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let cubes = document.getElementsByClassName('color-box');
     let h1Color = document.getElementById('h1-color');
     let h1 = document.querySelector('h1');
-    let right = document.getElementById('right');
     let startGameButton = document.getElementById('start-game');
     let resetButton = document.getElementById('reset');
-    let gameColors = document.getElementsByClassName('game-colors');
 
+    // let gameColors = document.getElementsByClassName('game-colors');
     // let rightCounterDisplay = document.getElementById('right-count');
     // let wrongCounterDisplay = document.getElementById('wrong-count');
 
 
     // Initial game values
-    let numCubes = 9;
+    let numCubes = 3;
     let colors = [];
     let pickedColor;
     let rightCounter = 0;
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
         setupDifficulty(); // Set up the difficulty mode buttons
         setupCubes(); // Set up the cubes for selection
         reset(); // Reset the game state
-        resetButton.addEventListener("click", reset);
     }
 
     /**
@@ -51,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let r = Math.floor(Math.random() * 256);
         let g = Math.floor(Math.random() * 256);
         let b = Math.floor(Math.random() * 256);
-        return `RGB:(${r}, ${g}, ${b})`;
+        return `rgb(${r}, ${g}, ${b})`;
     }
 
     /** 
@@ -79,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function changeColors(color) {
         for (let i = 0; i < cubes.length; i++) {
             cubes[i].style.backgroundColor = color;
-            gameColors[i].style.backgroundColor = color;
             h1.style.backgroundColor = color;
         }
     }
@@ -95,13 +92,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (clickedColor === pickedColor) {
                     alert = "Right Color";
                     changeColors(pickedColor);
-                    rightCounter += 1;
-                    updateScore();
+                    rightCounter++;
                 } else {
                     this.style.backgroundColor = "#550000";
                     this.textContent = "Try again";
-                    wrongCounter += 1;
-                    updateScore();
+                    wrongCounter++;
                 }
             });
         }
@@ -115,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
         pickedColor = chooseColor();
         h1Color.textContent = pickedColor;
         h1.style.backgroundColor = "#500";
-        right.textContent = "";
         for (let i = 0; i < cubes.length; i++) {
             if (colors[i]) {
                 cubes[i].style.display = "block";
@@ -146,11 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 reset();
             });
         }
-    }
-
-    function updateScore() {
-        document.getElementById('right-score').textContent = `Right: ${rightCounter}`;
-        document.getElementById('wrong-score').textContent = `Wrong: ${wrongCounter}`;
     }
 
     resetButton.addEventListener("click", function () {

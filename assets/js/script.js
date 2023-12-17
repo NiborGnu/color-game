@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let startGameButton = document.getElementById('start-game');
     let resetButton = document.getElementById('reset');
     let message = document.getElementById('message');
-    // let gameColors = document.getElementById('game-colors');
-    // let rightCounterDisplay = document.getElementById('right-count');
-    // let wrongCounterDisplay = document.getElementById('wrong-count');
 
 
     // Initial game values
@@ -19,7 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let rightCounter = 0;
     let wrongCounter = 0;
 
-    // Hide Game
+    /**
+     * Hide Game
+     */
     function startGame() {
         document.querySelector('header').style.display = 'none';
         document.querySelector('main').style.display = 'none';
@@ -107,6 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    /**
+     * Uppdete the score when when guessing right/wrong
+     */
     function updateScore() {
         document.getElementById('right-count').textContent = `Right: ${rightCounter}`;
         document.getElementById('wrong-count').textContent = `Wrong: ${wrongCounter}`;
@@ -172,6 +174,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    /**
+     * Reset Right/wrong counters and colors
+     */
     function resetAll() {
         rightCounter = 0;
         wrongCounter = 0;

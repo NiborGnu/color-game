@@ -194,25 +194,25 @@ document.getElementById('rules').addEventListener('click', function rules() {
     alert("1. click 1 box to guess a color" + "\n" +
         "2. right color is displayed in header in rgb value" + "\n" +
         "3. 5 right and you win" + "\n" +
-        "4. 10 fails and it's game over")
-})
+        "4. 10 fails and it's game over");
+});
 
-let rules = document.getElementById('rules')
+let rules = document.getElementById('rules');
 rules.addEventListener('mouseover', function rules() {
     this.style.backgroundColor = "#000";
     this.style.cursor = "pointer";
-})
+});
 
 rules.addEventListener('mouseout', function rules() {
     this.style.backgroundColor = "";
-})
+});
 
-let startGameButton = document.getElementById('start-game')
+let startGameButton = document.getElementById('start-game');
 startGameButton.addEventListener('mouseover', function rules() {
     this.style.backgroundColor = "#000";
     this.style.cursor = "pointer";
-})
+});
 
 startGameButton.addEventListener('mouseout', function rules() {
     this.style.backgroundColor = "";
-})
+});

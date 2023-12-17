@@ -163,15 +163,6 @@ document.getElementById('rules').addEventListener('click', function rules() {
         "3. 5 right and you win" + "\n" +
         "4. 10 fails and it's game over")
 })
-let startGameButton = document.getElementById('start-game')
-startGameButton.addEventListener('mouseover', function rules() {
-    this.style.backgroundColor = "#000";
-    this.style.cursor = "pointer";
-})
-
-startGameButton.addEventListener('mouseout', function rules() {
-    this.style.backgroundColor = "";
-})
 
 let rules = document.getElementById('rules')
 rules.addEventListener('mouseover', function rules() {
@@ -180,5 +171,15 @@ rules.addEventListener('mouseover', function rules() {
 })
 
 rules.addEventListener('mouseout', function rules() {
+    this.style.backgroundColor = "";
+})
+
+let startGameButton = document.getElementById('start-game')
+startGameButton.addEventListener('mouseover', function rules() {
+    this.style.backgroundColor = "#000";
+    this.style.cursor = "pointer";
+})
+
+startGameButton.addEventListener('mouseout', function rules() {
     this.style.backgroundColor = "";
 })

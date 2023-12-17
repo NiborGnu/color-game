@@ -85,6 +85,7 @@ div>button:hover {
     flex-wrap: wrap;
     text-align: center;
     border-radius: 0 0 10px 10px;
+    cursor: pointer;
 }
 
 .color-box {

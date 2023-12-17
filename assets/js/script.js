@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let h1 = document.querySelector('.win-color');
     let startGameButton = document.getElementById('start-game');
     let resetButton = document.getElementById('reset');
-    let message = document.getElementById('message')
+    let message = document.getElementById('message');
     // let gameColors = document.getElementById('game-colors');
     // let rightCounterDisplay = document.getElementById('right-count');
     // let wrongCounterDisplay = document.getElementById('wrong-count');
@@ -20,9 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let wrongCounter = 0;
 
     // Hide Game
-    document.querySelector('header').style.display = 'none';
-    document.querySelector('main').style.display = 'none';
-
+    function startGame() {
+        document.querySelector('header').style.display = 'none';
+        document.querySelector('main').style.display = 'none';
+    }
     /** 
      * Start Game Button 
      */
@@ -94,11 +95,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     changeColors(pickedColor);
                     rightCounter++;
                     updateScore();
+                    winLoss();
                 } else {
                     this.style.backgroundColor = "#550000";
                     message.textContent = "Try Again";
                     wrongCounter++;
                     updateScore();
+                    winLoss();
                 }
             });
         }
@@ -107,6 +110,24 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateScore() {
         document.getElementById('right-count').textContent = `Right: ${rightCounter}`;
         document.getElementById('wrong-count').textContent = `Wrong: ${wrongCounter}`;
+    }
+
+    function winLoss() {
+        if (rightCounter === 5) {
+            alert("Congratulations! You've won!");
+            wrongCounter = 0;
+            rightCounter = 0;
+            startGameButton.style.display = 'block';
+            startGame();
+            reset();
+        } else if (wrongCounter === 10) {
+            alert("Game over! You've reached 10 wrong answers.");
+            wrongCounter = 0;
+            rightCounter = 0;
+            startGameButton.style.display = 'block';
+            startGame();
+            reset();
+        }
     }
 
     /**
@@ -151,11 +172,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    resetButton.addEventListener("click", function () {
+    function resetAll() {
+        rightCounter = 0;
+        wrongCounter = 0;
         reset();
-    });
+    }
+
+    resetButton.addEventListener("click", resetAll);
 
     initializeGame();
+    startGame();
 
 });
 

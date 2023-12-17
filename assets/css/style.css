@@ -12,6 +12,15 @@ body {
     flex-direction: column;
 }
 
+#rules {
+    margin: auto;
+    width: 180px;
+    height: 60px;
+    background-color: #500;
+    font-size: x-large;
+    color: #fff;
+}
+
 #start-game {
     margin: auto;
     width: 180px;
@@ -44,7 +53,7 @@ h1 {
 }
 
 /* Buttons */
-.btn {
+div>button {
     padding: 0 15px 0 15px;
     outline: none;
     background-color: #400;
@@ -54,7 +63,7 @@ h1 {
     cursor: pointer;
 }
 
-.btn:hover {
+div>button:hover {
     background-color: #500;
 }
 

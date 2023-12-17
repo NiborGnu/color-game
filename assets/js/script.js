@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let difficulty = document.getElementsByClassName('difficulty');
     let cubes = document.getElementsByClassName('color-box');
     let h1Color = document.getElementById('h1-color');
-    let h1 = document.querySelector('h1')
+    let h1 = document.querySelector('h1');
     let right = document.getElementById('right');
     let startGameButton = document.getElementById('start-game');
     let resetButton = document.getElementById('reset');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
      * Initialize the game
      */
     function initializeGame() {
-        h1Color.textContent = pickedColor // Show picked color in header
+        h1Color.textContent = pickedColor; // Show picked color in header
         setupDifficulty(); // Set up the difficulty mode buttons
         setupCubes(); // Set up the cubes for selection
         reset(); // Reset the game state
@@ -92,15 +92,15 @@ document.addEventListener('DOMContentLoaded', function () {
             cubes[i].addEventListener("click", function () {
                 let clickedColor = this.style.backgroundColor;
                 if (clickedColor === pickedColor) {
-                    this.textContent = "Right Color"
+                    alert = "Right Color";
                     changeColors(pickedColor);
                     rightCounter += 1;
-                    updateScore()
+                    updateScore();
                 } else {
                     this.style.backgroundColor = "#550000";
                     this.textContent = "Try again";
                     wrongCounter += 1;
-                    updateScore()
+                    updateScore();
                 }
             });
         }
@@ -114,9 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
         pickedColor = chooseColor();
         h1Color.textContent = pickedColor;
         h1.style.backgroundColor = "#500";
-        resetButton.textContent = "New Colors";
         right.textContent = "";
-        for (var i = 0; i < cubes.length; i++) {
+        for (let i = 0; i < cubes.length; i++) {
             if (colors[i]) {
                 cubes[i].style.display = "block";
                 cubes[i].style.backgroundColor = colors[i];
@@ -132,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function setupDifficulty() {
         for (let i = 0; i < difficulty.length; i++) {
             difficulty[i].addEventListener("click", function () {
-                for (var i = 0; i < difficulty.length; i++) {
+                for (let i = 0; i < difficulty.length; i++) {
                     difficulty[i].classList.remove("selected");
                 }
                 this.classList.add("selected");
@@ -156,3 +155,10 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeGame();
 
 });
+
+document.getElementById('rules').addEventListener('click', function rules() {
+    alert("1. click 1 box to guess a color" + "\n" +
+        "2. right color is displayed in header in rgb value" + "\n" +
+        "3. 5 right and you win" + "\n" +
+        "4. 10 fails and it's game over")
+})

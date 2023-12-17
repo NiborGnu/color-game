@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let difficulty = document.getElementsByClassName('difficulty');
     let cubes = document.getElementsByClassName('color-box');
     let h1Color = document.getElementById('h1-color');
-    let h1 = document.querySelector('h1');
+    let h1 = document.querySelector('.win-color');
     let startGameButton = document.getElementById('start-game');
     let resetButton = document.getElementById('reset');
     let message = document.getElementById('message')
-    let gameColors = document.getElementById('game-colors');
+    // let gameColors = document.getElementById('game-colors');
     // let rightCounterDisplay = document.getElementById('right-count');
     // let wrongCounterDisplay = document.getElementById('wrong-count');
 
@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     difficulty[i].classList.remove("selected");
                 }
                 this.classList.add("selected");
+                message.textContent = "";
                 if (this.textContent === "Easy") {
                     numCubes = 3;
                 } else if (this.textContent === "Normal") {

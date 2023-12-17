@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const startGameButton = document.getElementById('start-game');
     const resetButton = document.getElementById('reset');
     const message = document.getElementById('message');
-    const nextColorString = document.getElementById('correct-answer')
-
+    const hideGameHeader = document.getElementById('hide');
+    const header = document.querySelector('header')
+    const main = document.querySelector('main');
+    const welcomText = document.getElementById('welcome-text');
 
     // Initial game values
     let numCubes = 3;
@@ -22,16 +24,20 @@ document.addEventListener('DOMContentLoaded', function () {
      * Hide Game
      */
     function buttonToStartGame() {
-        document.querySelector('header').style.display = 'none';
-        document.querySelector('main').style.display = 'none';
+        header.style.Width = "700px"
+        header.style.backgroundColor = '#222';
+        hideGameHeader.style.display = 'none';
+        main.style.display = 'none';
     }
     /** 
      * Start Game Button 
      */
     startGameButton.addEventListener('click', function () {
         startGameButton.style.display = 'none';
-        document.querySelector('header').style.display = 'block';
-        document.querySelector('main').style.display = 'block';
+        welcomText.style.display = 'none';
+        header.style.backgroundColor = '#500';
+        hideGameHeader.style.display = 'block';
+        main.style.display = 'block';
     });
 
     /**
@@ -96,8 +102,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     changeColorsGivenCorrectAnswer(answerCorrectColor);
                     rightCounter++;
                     resetToNextRound();
-                    if (rightCounter < 5) {
+                    if (rightCounter < 4) {
                         alert('Right Answer \nCan you get the next one too?');
+                    } else if (rightCounter === 4) {
+                        alert('Good job only 1 more!');
                     }
                 } else {
                     this.style.backgroundColor = "#550000";

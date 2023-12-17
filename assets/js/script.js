@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     let difficulty = document.getElementsByClassName('difficulty');
-    let colorBoxes = document.getElementsByClassName('color-box');
+    let cubes = document.getElementsByClassName('color-box');
     let h1Color = document.getElementById('h1-color');
+    let h1 = document.querySelector('h1')
     let right = document.getElementById('right');
     let startGameButton = document.getElementById('start-game');
-    let header = document.querySelector('header');
     let resetButton = document.getElementById('reset');
     let gameColors = document.getElementsByClassName('game-colors');
-    let rightCounterDisplay = document.getElementById('right-count');
-    let wrongCounterDisplay = document.getElementById('wrong-count');
+    // let rightCounterDisplay = document.getElementById('right-count');
+    // let wrongCounterDisplay = document.getElementById('wrong-count');
 
 
     // Initial game values
-    let numColorBoxes = 9;
+    let numCubes = 9;
     let colors = [];
     let pickedColor;
     let rightCounter = 0;
@@ -36,20 +36,32 @@ document.addEventListener('DOMContentLoaded', function () {
      * Initialize the game
      */
     function initializeGame() {
+        h1Color.textContent = pickedColor // Show picked color in header
         setupDifficulty(); // Set up the difficulty mode buttons
-        setupColorBoxes(); // Set up the color boxes for selection
+        setupCubes(); // Set up the cubes for selection
         reset(); // Reset the game state
-        resetButton.addEventListener("click", reset); // Add event listener for reset
+        resetButton.addEventListener("click", reset);
     }
 
     /**
      * Generate a random RGB color 
      */
-    function randomColor() {
+    function makeColor() {
         let r = Math.floor(Math.random() * 256);
         let g = Math.floor(Math.random() * 256);
         let b = Math.floor(Math.random() * 256);
-        return "rgb(" + r + ", " + g + ", " + b + ")";
+        return `RGB:(${r}, ${g}, ${b})`;
+    }
+
+    /** 
+     * Generate an array of random colors
+     */
+    function genRandomColors(num) {
+        let ar = [];
+        for (let i = 0; i < num; i++) {
+            ar.push(makeColor());
+        }
+        return ar;
     }
 
     /**
@@ -61,42 +73,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /** 
-     * Generate an array of random colors
-     */
-    function generateRandomColors(num) {
-        let arr = [];
-        for (let i = 0; i < num; i++) {
-            arr.push(randomColor());
-        }
-        return arr;
-    }
-
-    /** 
      * Change colors when correct color is selected
      */
     function changeColors(color) {
-        Array.from(gameColors.children).forEach(function (colorBox) {
-            colorBox.style.backgroundColor = color;
-            header.style.backgroundColor = color;
-        });
+        for (let i = 0; i < cubes.length; i++) {
+            cubes[i].style.backgroundColor = color;
+            gameColors[i].style.backgroundColor = color;
+            h1.style.backgroundColor = color;
+        }
     }
 
     /**
      * Set up the color boxes for selection
      */
-    function setupColorBoxes() {
-        for (let i = 0; i < numColorBoxes; i++) {
-            colorBoxes.addEventListener("click", function () {
+    function setupCubes() {
+        for (let i = 0; i < cubes.length; i++) {
+            cubes[i].style.backgroundColor = colors[i];
+            cubes[i].addEventListener("click", function () {
                 let clickedColor = this.style.backgroundColor;
                 if (clickedColor === pickedColor) {
                     this.textContent = "Right Color"
-                    rightCounterDisplay.textContent = "Right Answer";
                     changeColors(pickedColor);
-                    rightCounter++;
+                    rightCounter += 1;
+                    updateScore()
                 } else {
                     this.style.backgroundColor = "#550000";
                     this.textContent = "Try again";
-                    wrongCounter++;
+                    wrongCounter += 1;
+                    updateScore()
                 }
             });
         }
@@ -106,40 +110,47 @@ document.addEventListener('DOMContentLoaded', function () {
      *  Reset the game
      */
     function reset() {
-        colors = generateRandomColors(numColorBoxes);
+        colors = genRandomColors(numCubes);
         pickedColor = chooseColor();
-        console.log(pickedColor);
         h1Color.textContent = pickedColor;
-        header.style.backgroundColor = "#500";
+        h1.style.backgroundColor = "#500";
         resetButton.textContent = "New Colors";
         right.textContent = "";
-        Array.from(gameColors.children).forEach(function (colorBox, index) {
-            colorBox.style.backgroundColor = colors[index];
-        });
+        for (var i = 0; i < cubes.length; i++) {
+            if (colors[i]) {
+                cubes[i].style.display = "block";
+                cubes[i].style.backgroundColor = colors[i];
+            } else {
+                cubes[i].style.display = "none";
+            }
+        }
     }
 
     /**
      * Set up the difficulty mode buttons
      */
     function setupDifficulty() {
-        let difficultyButtons = document.getElementsByClassName('difficulty');
-        Array.from(difficultyButtons).forEach(function (button) {
-            button.addEventListener("click", function () {
-                difficultyButtons.forEach(function (btn) {
-                    btn.classList.remove("selected");
-                });
+        for (let i = 0; i < difficulty.length; i++) {
+            difficulty[i].addEventListener("click", function () {
+                for (var i = 0; i < difficulty.length; i++) {
+                    difficulty[i].classList.remove("selected");
+                }
                 this.classList.add("selected");
-
-                if (this.id === "easy") {
-                    numColorBoxes = 3;
-                } else if (this.id === "normal") {
-                    numColorBoxes = 6;
+                if (this.textContent === "Easy") {
+                    numCubes = 3;
+                } else if (this.textContent === "Normal") {
+                    numCubes = 6;
                 } else {
-                    numColorBoxes = 9;
+                    numCubes = 9;
                 }
                 reset();
             });
-        });
+        }
+    }
+
+    function updateScore() {
+        document.getElementById('right-score').textContent = `Right: ${rightCounter}`;
+        document.getElementById('wrong-score').textContent = `Wrong: ${wrongCounter}`;
     }
 
     initializeGame();

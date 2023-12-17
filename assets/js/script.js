@@ -153,6 +153,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('wrong-score').textContent = `Wrong: ${wrongCounter}`;
     }
 
+    resetButton.addEventListener("click", function () {
+        reset();
+    });
+
     initializeGame();
 
 });

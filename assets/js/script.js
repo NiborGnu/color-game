@@ -194,7 +194,8 @@ document.getElementById('rules').addEventListener('click', function rules() {
     alert("1. click 1 box to guess a color" + "\n" +
         "2. right color is displayed in header in rgb value" + "\n" +
         "3. 5 right and you win" + "\n" +
-        "4. 10 fails and it's game over");
+        "4. 10 fails and it's game over" + "\n" +
+        "5. Reset Game will reset the right/wrong score");
 });
 
 let rules = document.getElementById('rules');

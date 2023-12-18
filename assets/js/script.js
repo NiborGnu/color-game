@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const resetButton = document.getElementById('reset');
     const message = document.getElementById('message');
     const hideGameHeader = document.getElementById('hide');
-    const header = document.querySelector('header')
+    const header = document.querySelector('header');
     const main = document.querySelector('main');
     const welcomText = document.getElementById('welcome-text');
 

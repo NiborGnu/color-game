@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('header');
     const main = document.querySelector('main');
     const welcomText = document.getElementById('welcome-text');
+    const footer = document.querySelector('footer');
+    const body = document.querySelector('body');
 
     // Initial game values
     let numCubes = 3;
@@ -25,10 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function buttonToStartGame() {
         welcomText.style.display = 'block';
-        header.style.Width = "700px";
         header.style.backgroundColor = '#222';
         hideGameHeader.style.display = 'none';
         main.style.display = 'none';
+        footer.style.margin = '664px auto';
+        body.style.maxHeight = '690px';
     }
 
     /** 
@@ -40,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         header.style.backgroundColor = '#500';
         hideGameHeader.style.display = 'block';
         main.style.display = 'block';
+        footer.style.margin = '9px auto'
     });
 
     /**

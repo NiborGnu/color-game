@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     rightCounter++;
                     resetToNextRound();
                     if (rightCounter < 4) {
-                        alert('Right Answer \nCan you get the next one too?');
+                        alert('Right Answer \nCan you get the next one to?');
                     } else if (rightCounter === 4) {
                         alert('Good job only 1 more!');
                     }
@@ -208,8 +208,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.getElementById('rules').addEventListener('click', function rules() {
-    alert("1. click 1 box to guess a color" + "\n" +
-        "2. right color is displayed in header in rgb value" + "\n" +
+    alert("1. Click 1 box to guess a color" + "\n" +
+        "2. Right color is displayed in header in rgb value" + "\n" +
         "3. 5 right and you win" + "\n" +
         "4. 10 fails and it's game over" + "\n" +
         "5. Reset Game will reset the right/wrong score");

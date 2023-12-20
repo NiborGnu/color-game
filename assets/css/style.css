@@ -159,7 +159,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 550px) {
     body {
         margin: 20px 5%;
     }

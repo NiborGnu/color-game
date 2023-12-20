@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
      * Start Game Button 
      */
     startGameButton.addEventListener('click', function () {
-        startGameButton.style.display = 'none';
         welcomText.style.display = 'none';
         header.style.backgroundColor = '#500';
         hideGameHeader.style.display = 'block';

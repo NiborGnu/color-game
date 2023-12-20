@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         header.style.backgroundColor = '#500';
         hideGameHeader.style.display = 'block';
         main.style.display = 'block';
-        footer.style.margin = '9px 0'
+        footer.style.margin = '9px 0';
     });
 
     /**

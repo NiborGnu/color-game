@@ -118,7 +118,8 @@ footer {
     height: 20px;
     box-shadow: 0 -5px 5px #500;
     padding: 15px 0;
-    width: 100%;
+    width: 510px;
+    position: absolute;
 }
 
 .icons a:hover {

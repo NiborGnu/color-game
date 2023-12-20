@@ -1,12 +1,10 @@
 # color-game
 
+The Color Game is made to give people a chanse to play a game and learn RBG values at the same time.
 
+The site can be viewed on GitHub pages [here](https://niborgnu.github.io/color-game/)
 
-
-
-
-
-
+![Responsive Mockup](documentation/all-devices-black.png)
 
 
 ---

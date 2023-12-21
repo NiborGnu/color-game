@@ -105,7 +105,7 @@ The flowchart represent the logic of the application:
 
 + ### JS
     - No errors were found when passing through the official [JSHint](https://jshint.com/) validator 
-    - except the warnings that 
+    - Warnings(2) that "functions declared within loops may lead to confusing semantics" but nothing that will interfere with code
 
     ![JS Validator](documentation/js-checker.png)
 

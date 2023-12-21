@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /** 
-     * Start Game Button 
+     * Start Game function
      */
     startGameButton.addEventListener('click', function () {
         welcomText.style.display = 'none';
@@ -106,19 +106,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (clickedColor === answerCorrectColor) {
                     changeColorsGivenCorrectAnswer(answerCorrectColor);
                     rightCounter++;
-                    resetToNextRound();
+                    updateScore();
                     if (rightCounter < 4) {
-                        alert('Right Answer \nCan you get the next one to?');
+                        setTimeout(function () {
+                            alert('Right Answer \nCan you get the next one too?');
+                        }, 0);
                     } else if (rightCounter === 4) {
-                        alert('Good job only 1 more!');
+                        setTimeout(function () {
+                            alert('Good job, only 1 more!');
+                        }, 0);
+                    } else if (rightCounter === 5 || wrongCounter === 10) {
+                        setTimeout(function () {
+                            winOrLoseGame();
+                        }, 0);
                     }
+                    resetToNextRound();
                 } else {
                     this.style.backgroundColor = "#550000";
                     message.textContent = "Try Again";
                     wrongCounter++;
+                    updateScore();
+                    setTimeout(function () {
+                        winOrLoseGame();
+                    }, 0);
                 }
-                updateScore();
-                winOrLoseGame();
             });
         }
     }

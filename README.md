@@ -29,7 +29,9 @@ The site can be viewed on GitHub pages [here](https://niborgnu.github.io/color-g
 + #### Start Game Button
     - Positioned in the Header Below the Welcome Text
     - A button to hide the start screen and show the game
+    
     ![Start Button](documentation/start-game-button.png)
+
 
 + #### Game Board
     - Title with the text Guess the Color in
@@ -180,4 +182,4 @@ In your IDE Terminal, type the following command to clone my repository:
 
     * [Code Institute](https://codeinstitute.net/) - For the training and classes in all the basics of HTML and CSS and JS
     
-    * [JavaScript Mastery](https://www.youtube.com/c/javascriptmastery) - Fore awesome js tutorials
+    * [JavaScript Mastery](https://www.youtube.com/c/javascriptmastery) - Fore awesome js tutorialsz

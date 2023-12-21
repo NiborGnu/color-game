@@ -85,3 +85,53 @@ The flowchart represent the logic of the application:
 - [Git](https://git-scm.com/) was used for the version control of the website.
 - [GitHub](https://github.com/) was used to host the   code of the website.
 - [Photoshop](https://www.adobe.com/products/photoshop.html) was used to resize images for the README file.
+
+---
+
+## Testing
+
+## Validator testing
++ ### HTML
+    - No errors or warnings were found when passing through the official [W3C](https://validator.w3.org/) validator.
+    
+    ![HTML Validator](documentation/html-checker.png)
+
++ ### CSS
+    - No errors were found when passing through the official [W3C (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri) validator. 1 warning was found 
+
+    ![CSS Validator](documentation/css-checker.png)
+
++ ### JS
+    - No errors were found when passing through the official [JSHint](https://jshint.com/) validator 
+    - except the warnings that 
+
+    ![JS Validator](documentation/js-checker.png)
+
+---
+
+### Compatibility And Responsiveness
+
+In order to confirm the correct functionality and appearance:
+
+
++ The website was tested on the following browsers: Chrome, Firefox, Edge
+
+    - Chrome
+
+    ![Chrome](documentation/chrome-test.png)
+
+    - Firefox
+
+    ![Firefox](documentation/firefox-test.png)
+
+    - Edge
+
+    ![Edge](documentation/edge-test.png)
+
+---
+
++ ## LightHouse report
+
+    - Using lighthouse in dev tools I confirmed that the website is performing well, accessible, and the colors and fonts chosen are readable.
+
+    ![Lighthouse](documentation/lighthouse.png)

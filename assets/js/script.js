@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         hideGameHeader.style.display = 'none';
         main.style.display = 'none';
         body.style.maxHeight = '690px';
-        footer.style.margin = '664px auto 0'
+        footer.style.margin = '664px auto 0';
     }
 
     /** 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         header.style.backgroundColor = '#500';
         hideGameHeader.style.display = 'block';
         main.style.display = 'block';
-        footer.style.margin = '9px auto'
+        footer.style.margin = '9px auto';
     });
 
     /**

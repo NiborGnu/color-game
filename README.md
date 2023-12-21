@@ -20,6 +20,8 @@ The site can be viewed on GitHub pages [here](https://niborgnu.github.io/color-g
 ### Returning Visitor Goals
 * As a Returning Visitor, I want to be able to play diffrent difficulties.
 
+---
+
 ## Features
 
 ### Existing Features
@@ -55,6 +57,31 @@ The site can be viewed on GitHub pages [here](https://niborgnu.github.io/color-g
     - Text: Made by Robin Ung (author). Have fun and play!
     ![Footer](documentation/footer.png)
 
+---
+
 ### Features Left to Implement
     
 + #### Impliment a HEX alternative to choose from instead of RGB
+
+---
+
+## Flowchart
+
+The flowchart represent the logic of the application:
+
+  ![Miro Page](documentation/color-game-flowchart.png)
+
+---
+
+## Technologies Used
+
+- [Favicon](https://icons8.com/icons/set/witch) was    used to add an icon in the tab.
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/) was used as the foundation of the site.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/) - was used to add the styles and layout of the   site.
+- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used to   arrange items symmetrically on the pages.
+- [Miro](https://miro.com/) - was used to make flowchart for functions.
+- [JS](https://www.w3schools.com/js/) - was used to add interactivity to the site.
+- [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
+- [Git](https://git-scm.com/) was used for the version control of the website.
+- [GitHub](https://github.com/) was used to host the   code of the website.
+- [Photoshop](https://www.adobe.com/products/photoshop.html) was used to resize images for the README file.

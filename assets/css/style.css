@@ -119,44 +119,12 @@ footer {
     box-shadow: 0 -5px 5px #500;
     padding: 15px 0;
     width: 100%;
+    display: flex;
+
 }
 
-.icons a:hover {
-    color: #fff
-}
-
-.fa-brands {
-    text-decoration: none;
-    text-align: center;
-}
-
-.fa-facebook {
-    color: rgb(24, 119, 242);
-    padding-right: 20px;
-}
-
-.fa-instagram {
-    color: rgb(246, 1, 140);
-    padding-right: 20px;
-}
-
-.fa-twitter {
-    color: rgb(28, 150, 232);
-    padding-right: 20px;
-}
-
-.fa-youtube {
-    color: rgb(255, 0, 0);
-    padding-right: 20px;
-}
-
-.fa-snapchat {
-    color: rgb(247, 247, 0);
-    padding-right: 20px;
-}
-
-.fa-github {
-    color: rgb(171, 171, 171);
+.footer-text {
+    margin: auto;
 }
 
 @media screen and (max-width: 385px) {

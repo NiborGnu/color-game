@@ -59,7 +59,7 @@ The site can be viewed on GitHub pages [here](https://niborgnu.github.io/color-g
 
 ---
 
-### Features Left to Implement
+### Feature Improvements
     
 + #### Impliment a HEX alternative to choose from instead of RGB
 
@@ -136,6 +136,7 @@ In order to confirm the correct functionality and appearance:
 
     ![Lighthouse](documentation/lighthouse.png)
 
+---
 
 ## Bugs
 
@@ -171,3 +172,12 @@ In your IDE Terminal, type the following command to clone my repository:
 
 ---
 
+### Credits
++ #### Content 
+    - The inspiration and some of the code to make the Game come from [Michelle Huang](https://codepen.io/itsmhuang/pen/oxaReK)
+
++ #### Inspiration
+
+    * [Code Institute](https://codeinstitute.net/) - For the training and classes in all the basics of HTML and CSS and JS
+    
+    * [JavaScript Mastery](https://www.youtube.com/c/javascriptmastery) - Fore awesome js tutorials

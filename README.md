@@ -176,7 +176,7 @@ In your IDE Terminal, type the following command to clone my repository:
 
 ### Credits
 + #### Content 
-    - The inspiration and some of the code to make the Game come from [Michelle Huang](https://codepen.io/itsmhuang/pen/oxaReK)
+    - The inspiration to make the Game come from [Michelle Huang](https://codepen.io/itsmhuang/pen/oxaReK). However I did do all the coding myself and did not copy any line directly.
 
 + #### Inspiration
 

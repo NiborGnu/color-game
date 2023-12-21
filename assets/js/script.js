@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let wrongCounter = 0;
 
     /**
-     * Hide Game bord
+     * Hide Game board
      */
     function buttonToStartGame() {
         welcomText.style.display = 'block';
@@ -120,7 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             winOrLoseGame();
                         }, 0);
                     }
-                    resetToNextRound();
+                    setTimeout(function () {
+                        resetToNextRound();
+                    }, 0);
                 } else {
                     this.style.backgroundColor = "#550000";
                     message.textContent = "Try Again";

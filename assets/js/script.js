@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /** 
-     * Change colors when correct color is selected
+     * Change colors of cubes and background header to correct answer color
      */
     function changeColorsGivenCorrectAnswer(color) {
         for (let i = 0; i < cubes.length; i++) {
@@ -137,13 +137,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /**
-     * Uppdete the score when when guessing right/wrong
+     * Update the score when when guessing right/wrong
      */
     function updateScore() {
         document.getElementById('right-count').textContent = `Right: ${rightCounter}`;
         document.getElementById('wrong-count').textContent = `Wrong: ${wrongCounter}`;
     }
 
+    /**
+     * 5 right answers and win alert and 10 wrong answers and lose alert
+     */
     function winOrLoseGame() {
         if (rightCounter === 5) {
             alert("Congratulations! You've won!");
@@ -163,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /**
-     *  Reset the game
+     *  Reset the colors for next game
      */
     function resetToNextRound() {
         colors = generateArrayColors(numCubes);
@@ -214,6 +217,9 @@ document.addEventListener('DOMContentLoaded', function () {
         resetToNextRound();
     }
 
+    /**
+     * Rules popup
+     */
     document.getElementById('rules').addEventListener('click', function rules() {
         alert("1. Click 1 box to guess a color" + "\n" +
             "2. Right color is displayed in header in rgb value" + "\n" +
@@ -244,5 +250,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     initializeGame();
     buttonToStartGame();
-
 });

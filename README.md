@@ -77,12 +77,12 @@ The flowchart represents the logic of the application:
 
 ## Technologies Used
 
-- [Favicon](https://icons8.com/icons/set/witch) was used to add an icon in the tab.
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/) was used as the foundation of the site.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/) - was used to add the styles and layout of the site.
+- [JS](https://www.w3schools.com/js/) - was used to add interactivity to the site.
 - [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used to arrange items symmetrically on the pages.
 - [Miro](https://miro.com/) - was used to make a flowchart for functions.
-- [JS](https://www.w3schools.com/js/) - was used to add interactivity to the site.
+- [Favicon](https://icons8.com/icons/set/witch) was used to add an icon in the tab.
 - [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
 - [Git](https://git-scm.com/) was used for the version control of the website.
 - [GitHub](https://github.com/) was used to host the code of the website.
@@ -117,7 +117,7 @@ The flowchart represents the logic of the application:
 In order to confirm the correct functionality and appearance:
 
 
-+ The website was tested on the following browsers: Chrome, Firefox, Edge
++ #### The website was tested on the following browsers: Chrome, Firefox, Edge
 
     - Chrome I tested playing the game on different levels and made sure all buttons worked. No errors
 
@@ -132,6 +132,11 @@ In order to confirm the correct functionality and appearance:
     ![Edge](documentation/edge-test.png)
 
 ---
+
++ #### Tested responsiveness with Responsive Viewer
+
+![Responsiveness](documentation/responsiveness.png)
+
 
 + ## LightHouse report
 

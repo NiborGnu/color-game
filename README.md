@@ -116,15 +116,15 @@ In order to confirm the correct functionality and appearance:
 
 + The website was tested on the following browsers: Chrome, Firefox, Edge
 
-    - Chrome
+    - Chrome I tested playing the game on diffrent levels and made sure all buttons worked. No errors
 
     ![Chrome](documentation/chrome-test.png)
 
-    - Firefox
+    - Firefox I tested playing the game on diffrent levels and made sure all buttons worked. No errors
 
     ![Firefox](documentation/firefox-test.png)
 
-    - Edge
+    - Edge I tested playing the game on diffrent levels and made sure all buttons worked. No errors
 
     ![Edge](documentation/edge-test.png)
 
@@ -135,3 +135,39 @@ In order to confirm the correct functionality and appearance:
     - Using lighthouse in dev tools I confirmed that the website is performing well, accessible, and the colors and fonts chosen are readable.
 
     ![Lighthouse](documentation/lighthouse.png)
+
+
+## Bugs
+
++ ### Solved bugs
+    - When I tested the site I discovered the the js was not working.
+    - I discovered this was because I hade put a ":" in the line "return `rgb(${r}, ${g}, ${b})`" between "b" and "(".
+    - Removing the ":" fixed the problem.
+
++ ### Unfixed Bugs
+    - No unfixed bugs
+
+---
+
+## Deployment
+
+### Deployment to GitHub Pages
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the [GitHub repository](https://github.com/NiborGnu/color-game), navigate to the Settings tab 
+  - From the source section drop-down menu, select the **Main** Branch, then click "Save".
+  - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The live link can be found [here](https://niborgnu.github.io/color-game/)
+
+### Local Deployment
+
+In order to make a local copy of this project, you can clone it.
+In your IDE Terminal, type the following command to clone my repository:
+
+- `git clone https://github.com/NiborGnu/color-game.git`
+
+- Alternatively, if you use Gitpod, you can [click here](https://gitpod.io/#https://github.com/NiborGnu/color-game.git), which will start the Gitpod workspace for you.
+
+---
+

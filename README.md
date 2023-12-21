@@ -88,6 +88,23 @@ The flowchart represents the logic of the application:
 - [GitHub](https://github.com/) was used to host the code of the website.
 - [Photoshop](https://www.adobe.com/products/photoshop.html) was used to resize images for the README file.
 
+
+---
+
+## Design
+
+### Color Scheme
+
+![Color pallet](documentation/color-pallet.png) 
+
+- Eerie Black color was used because it is often correlated with elegance, sophistication, and depth. 
+
+- Rosewood color was used because of its association with strength, open-mindedness, and receptivity.
+
+- Black Bean color was used because it's bold and earthy.
+
+- White color was used to lighten the website by symbolizing purity and innocence. 
+
 ---
 
 ## Testing

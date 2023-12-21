@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const welcomText = document.getElementById('welcome-text');
     const footer = document.querySelector('footer');
     const body = document.querySelector('body');
+    const rules = document.getElementById('rules');
 
     // Initial game values
     let numCubes = 3;
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let wrongCounter = 0;
 
     /**
-     * Hide Game
+     * Hide Game bord
      */
     function buttonToStartGame() {
         welcomText.style.display = 'block';
@@ -200,37 +201,35 @@ document.addEventListener('DOMContentLoaded', function () {
         resetToNextRound();
     }
 
+    document.getElementById('rules').addEventListener('click', function rules() {
+        alert("1. Click 1 box to guess a color" + "\n" +
+            "2. Right color is displayed in header in rgb value" + "\n" +
+            "3. 5 right and you win" + "\n" +
+            "4. 10 fails and it's game over" + "\n" +
+            "5. Reset Game will reset the right/wrong score");
+    });
+
+    rules.addEventListener('mouseover', function rules() {
+        this.style.backgroundColor = "#000";
+        this.style.cursor = "pointer";
+    });
+
+    rules.addEventListener('mouseout', function rules() {
+        this.style.backgroundColor = "";
+    });
+
+    startGameButton.addEventListener('mouseover', function rules() {
+        this.style.backgroundColor = "#000";
+        this.style.cursor = "pointer";
+    });
+
+    startGameButton.addEventListener('mouseout', function rules() {
+        this.style.backgroundColor = "";
+    });
+
     resetButton.addEventListener("click", resetAll);
 
     initializeGame();
     buttonToStartGame();
 
-});
-
-document.getElementById('rules').addEventListener('click', function rules() {
-    alert("1. Click 1 box to guess a color" + "\n" +
-        "2. Right color is displayed in header in rgb value" + "\n" +
-        "3. 5 right and you win" + "\n" +
-        "4. 10 fails and it's game over" + "\n" +
-        "5. Reset Game will reset the right/wrong score");
-});
-
-let rules = document.getElementById('rules');
-rules.addEventListener('mouseover', function rules() {
-    this.style.backgroundColor = "#000";
-    this.style.cursor = "pointer";
-});
-
-rules.addEventListener('mouseout', function rules() {
-    this.style.backgroundColor = "";
-});
-
-let startGameButton = document.getElementById('start-game');
-startGameButton.addEventListener('mouseover', function rules() {
-    this.style.backgroundColor = "#000";
-    this.style.cursor = "pointer";
-});
-
-startGameButton.addEventListener('mouseout', function rules() {
-    this.style.backgroundColor = "";
 });

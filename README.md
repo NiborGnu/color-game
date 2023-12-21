@@ -149,9 +149,11 @@ In order to confirm the correct functionality and appearance:
 ## Bugs
 
 + ### Solved bugs
-    - When I tested the site I discovered the js was not working.
-    - I discovered this was because I had put a ":" in the line "return `rgb(${r}, ${g}, ${b})`" between "b" and "(".
-    - Removing the ":" fixed the problem.
+    1. When I tested the site I discovered the color-box was not working.
+    - I discovered this was because I had put a ":" in the line "return `rgb(${r}, ${g}, ${b})`" between "b" and "(". Removing the ":" fixed the problem.
+
+    2. Right/Wrong score did not update before alert.
+    - Add a setTimeout to winOrLoseGame and now the Right/Wrong score updates before alert.
 
 + ### Unfixed Bugs
     - No unfixed bugs
